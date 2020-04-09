@@ -83,7 +83,21 @@ class _ProductDetailsState extends State<ProductDetails> {
             //===========SIZE BUTTONS==================
             Expanded(
               child: MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(context: context,
+                  builder: (context){
+                    return new AlertDialog(
+                      title:new Text("Size"),
+                      content: new Text("choose the Size"),
+                      actions: <Widget>[
+                        new MaterialButton(onPressed: (){
+                          Navigator.of(context).pop(context);
+                        },
+                        child: new Text("close"),)
+                      ],
+                    );
+                  });
+                },
                 color: Colors.white,
                 textColor: Colors.grey,
                 elevation: 0.2,
@@ -99,7 +113,21 @@ class _ProductDetailsState extends State<ProductDetails> {
             // ======Size buttons======
             Expanded(
               child: MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(context: context,
+                      builder: (context){
+                        return new AlertDialog(
+                          title:new Text("Color"),
+                          content: new Text("choose the colour"),
+                          actions: <Widget>[
+                            new MaterialButton(onPressed: (){
+                              Navigator.of(context).pop(context);
+                            },
+                              child: new Text("close"),)
+                          ],
+                        );
+                      });
+                },
                 color: Colors.white,
                 textColor: Colors.grey,
                 elevation: 0.2,
@@ -114,7 +142,21 @@ class _ProductDetailsState extends State<ProductDetails> {
             // =================
             Expanded(
               child: MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(context: context,
+                      builder: (context){
+                        return new AlertDialog(
+                          title:new Text("Qty"),
+                          content: new Text("choose the Quantity"),
+                          actions: <Widget>[
+                            new MaterialButton(onPressed: (){
+                              Navigator.of(context).pop(context);
+                            },
+                              child: new Text("close"),)
+                          ],
+                        );
+                      });
+                },
                 color: Colors.white,
                 textColor: Colors.grey,
                 elevation: 0.2,
@@ -155,6 +197,42 @@ class _ProductDetailsState extends State<ProductDetails> {
             new IconButton(icon:Icon(Icons.favorite_border),color: Colors.red, onPressed: (){}),
           ],
         ),
+        Divider(),
+        new ListTile(
+          title: new Text("Product details"),
+          subtitle: new Text("the French braid is a classic for a reason. You can wear this versatile braid for a casual brunch, the gym or the office. Keep it super smooth for a more professional look, or pull a few face-framing pieces out for a soft and romantic vibe. You can also team it with a fishtail braid or half-up, half-down style, and French braids are also a popular hairstyle for wedding guests. Whatever the occasion, a French braid is a perfect choice."),
+        ),
+        
+        Divider(),
+        Row(
+          children: <Widget>[
+            Padding(padding: const EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
+            child: new Text("Product name",style:TextStyle(color:Colors.grey),),),
+            Padding(padding:EdgeInsets.all(5.0),
+            child: new Text(widget.product_details_name),)
+          ],
+        ),
+        Row(
+          children: <Widget>[
+            Padding(padding: const EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
+              child: new Text("Product brand",style:TextStyle(color:Colors.grey),),),
+            Padding(padding:EdgeInsets.all(5.0),
+
+              //Remember to create product band
+              child: new Text("brand-x"),)
+          ],
+        ),
+        Row(
+          children: <Widget>[
+            Padding(padding: const EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
+              child: new Text("Product condition",style:TextStyle(color:Colors.grey),),),
+            Padding(padding:EdgeInsets.all(5.0),
+              // remember the condition product
+              child: new Text(""),),
+            Padding(padding:EdgeInsets.all(5.0),
+              child: new Text("NEW"),),
+          ],
+        )
       ]),
     );
   }
