@@ -60,10 +60,18 @@ flutter:
     - images/cats/bobcuts.jpg
     - images/cats/braids3.jpg
     - images/cats/buns.jpg
+    - images/products/afro1.jpg
+    - images/products/afro3.jpg
+    - images/products/afro97.jpg
+    - images/products/beehive2.jpg
+    - images/products/beehive3.jpg
+    - images/products/beehive5.jpg
+    - images/products/braids5.jpg
+    - images/products/braids 4.jpg
+    - images/products/braids45.jpg
 
 
-
-  # An image asset can refer to one or more resolution-specific "variants", see
+        # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
   # For details regarding adding assets from package dependencies, see
