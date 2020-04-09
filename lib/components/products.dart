@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 //my own imports
-import 'package:mremboco/components/horizontal_listview.dart';
-import 'package:mremboco/components/products.dart.';
+//import 'package:mremboco/components/horizontal_listview.dart';
+//import 'package:mremboco/components/products.dart.';
+import 'package:mremboco/pages/product_details.dart';
 
 class Products extends StatefulWidget {
   @override
@@ -30,8 +31,32 @@ class _ProductsState extends State<Products> {
       "price": "3800",
     },
     {
-      "name": "smoothbeehives",
-      "picture": "images/products/beehive5.jpg",
+      "name": "Afro",
+      "picture": "images/products/afro1.jpg",
+      "old_price": '2000',
+      "price": "1500",
+    },
+    {
+      "name": "Flat top",
+      "picture": "images/products/afro3.jpg",
+      "old_price": '2000',
+      "price": "1500",
+    },
+    {
+      "name": "short natural curl",
+      "picture": "images/products/afro97.jpg",
+      "old_price": '2000',
+      "price": "1500",
+    },
+    {
+      "name": "fishtails",
+      "picture": "images/products/braids5.jpg",
+      "old_price": '2000',
+      "price": "1500",
+    },
+    {
+      "name": "Rope Twisted",
+      "picture": "images/products/braids45.jpg",
       "old_price": '2000',
       "price": "1500",
     },
@@ -71,35 +96,31 @@ class Single_prod extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Hero(
-        tag: prod_name,
+        tag: new Text("hero 1"),
         child: Material(
-          child: InkWell(onTap: (){},
-          child: GridTile(
-            footer:Container(
-              color: Colors.white70,
-              child: ListTile(
-                leading: Text(
-                  prod_name,
-                  style: TextStyle(fontWeight:FontWeight.bold),
-              ),
-               title:Text(
-                 "\$$prod_price",
-                 style: TextStyle(
-                     color: Colors.blueAccent,fontWeight:FontWeight.w800 ),
-               ),
-                subtitle:Text(
-                  "\$$prod_old_price",
-                  style: TextStyle(
-                      color: Colors.black,fontWeight:FontWeight.w800,
-                      decoration
-                      :TextDecoration.lineThrough
-                        ),
+          child: InkWell(
+            onTap: () => Navigator.of(context).push(new MaterialPageRoute(
+                builder: (context) => new ProductDetails(
+                  // passing values of the products to product details page
+                  product_details_name:prod_name,
+                  product_details_new_price: prod_price,
+                  product_details_old_price: prod_old_price,
+                  product_details_picture: prod_picture,
+                ))),
+            child: GridTile(
+                footer: Container(
+                  color: Colors.white70,
+                  child:new Row(children: <Widget>[
+                    Expanded(
+                      child: new Text(prod_name, style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16.0),),
+                    ),
+                    new Text ("\$${prod_price}",style: TextStyle(color:Colors.red,fontWeight: FontWeight.bold) ,),
+                  ],)
                 ),
-            ),
-            ),
-              child: Image.asset(prod_picture,
-              fit: BoxFit.cover,
-              )),
+                child: Image.asset(
+                  prod_picture,
+                  fit: BoxFit.cover,
+                )),
           ),
         ),
       ),
