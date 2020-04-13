@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+//my imports
+import 'package:mremboco/components/cart_products.dart';
 
 class Cart extends StatefulWidget {
   @override
@@ -22,6 +24,7 @@ class _CartState extends State<Cart> {
               onPressed: () {}),
         ],
       ),
+      body: new Cart_products(),
       bottomNavigationBar: new Container(
         color: Colors.white,
         child: Row(
